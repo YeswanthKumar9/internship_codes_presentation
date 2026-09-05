@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="pwm" Register="9" Alu="7" Lut="2" T_Register="9(9)" T_Alu="7(7)" T_Lut="2(2)"/>

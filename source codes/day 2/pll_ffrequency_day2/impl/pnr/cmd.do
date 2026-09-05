@@ -1,0 +1,16 @@
+-d C:\Gowin\Gowin_V1.9.12.03_x64\IDE\bin\Documents\pll_ffrequency_day2\impl\gwsynthesis\pll_ffrequency_day2.vg
+-p GW1NSR-4C-QFN48P-6
+-pn GW1NSR-LV4CQN48PC6/I5
+-cst C:\Gowin\Gowin_V1.9.12.03_x64\IDE\bin\Documents\pll_ffrequency_day2\src\pll_frequency_day2.cst
+-cfg C:\Gowin\Gowin_V1.9.12.03_x64\IDE\bin\Documents\pll_ffrequency_day2\impl\pnr\device.cfg
+-bit
+-tr
+-ph
+-timing
+-cst_error
+-place_option 0
+-route_option 0
+-clock_route_order 0
+-correct_hold 1
+-route_maxfan 23
+-global_freq 50.000

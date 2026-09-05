@@ -1,0 +1,186 @@
+//
+//Written by GowinSynthesis
+//Tool Version "V1.9.12.03 (64-bit)"
+//Sat Sep  5 17:09:01 2026
+
+//Source file index table:
+//file0 "\C:/Gowin/Gowin_V1.9.12.03_x64/IDE/bin/Documents/day3_cortex-m3/src/pwm.v"
+`timescale 100 ps/100 ps
+module pwm (
+  clk,
+  rst,
+  led
+)
+;
+input clk;
+input rst;
+output led;
+wire clk_d;
+wire rst_d;
+wire led_d;
+wire n12_1;
+wire n12_2;
+wire n11_1;
+wire n11_2;
+wire n10_1;
+wire n10_2;
+wire n9_1;
+wire n9_2;
+wire n8_1;
+wire n8_2;
+wire n7_1;
+wire n7_2;
+wire n6_1;
+wire n6_0_COUT;
+wire n15_26;
+wire n13_6;
+wire [7:0] counter;
+wire VCC;
+wire GND;
+  IBUF clk_ibuf (
+    .O(clk_d),
+    .I(clk) 
+);
+  IBUF rst_ibuf (
+    .O(rst_d),
+    .I(rst) 
+);
+  OBUF led_obuf (
+    .O(led),
+    .I(led_d) 
+);
+  DFFC counter_6_s0 (
+    .Q(counter[6]),
+    .D(n7_1),
+    .CLK(clk_d),
+    .CLEAR(rst_d) 
+);
+  DFFC counter_5_s0 (
+    .Q(counter[5]),
+    .D(n8_1),
+    .CLK(clk_d),
+    .CLEAR(rst_d) 
+);
+  DFFC counter_4_s0 (
+    .Q(counter[4]),
+    .D(n9_1),
+    .CLK(clk_d),
+    .CLEAR(rst_d) 
+);
+  DFFC counter_3_s0 (
+    .Q(counter[3]),
+    .D(n10_1),
+    .CLK(clk_d),
+    .CLEAR(rst_d) 
+);
+  DFFC counter_2_s0 (
+    .Q(counter[2]),
+    .D(n11_1),
+    .CLK(clk_d),
+    .CLEAR(rst_d) 
+);
+  DFFC counter_1_s0 (
+    .Q(counter[1]),
+    .D(n12_1),
+    .CLK(clk_d),
+    .CLEAR(rst_d) 
+);
+  DFFC counter_0_s0 (
+    .Q(counter[0]),
+    .D(n13_6),
+    .CLK(clk_d),
+    .CLEAR(rst_d) 
+);
+  DFFC led_s2 (
+    .Q(led_d),
+    .D(n15_26),
+    .CLK(clk_d),
+    .CLEAR(rst_d) 
+);
+  DFFC counter_7_s0 (
+    .Q(counter[7]),
+    .D(n6_1),
+    .CLK(clk_d),
+    .CLEAR(rst_d) 
+);
+  ALU n12_s (
+    .SUM(n12_1),
+    .COUT(n12_2),
+    .I0(counter[1]),
+    .I1(counter[0]),
+    .I3(VCC),
+    .CIN(GND) 
+);
+defparam n12_s.ALU_MODE=0;
+  ALU n11_s (
+    .SUM(n11_1),
+    .COUT(n11_2),
+    .I0(counter[2]),
+    .I1(GND),
+    .I3(VCC),
+    .CIN(n12_2) 
+);
+defparam n11_s.ALU_MODE=0;
+  ALU n10_s (
+    .SUM(n10_1),
+    .COUT(n10_2),
+    .I0(counter[3]),
+    .I1(GND),
+    .I3(VCC),
+    .CIN(n11_2) 
+);
+defparam n10_s.ALU_MODE=0;
+  ALU n9_s (
+    .SUM(n9_1),
+    .COUT(n9_2),
+    .I0(counter[4]),
+    .I1(GND),
+    .I3(VCC),
+    .CIN(n10_2) 
+);
+defparam n9_s.ALU_MODE=0;
+  ALU n8_s (
+    .SUM(n8_1),
+    .COUT(n8_2),
+    .I0(counter[5]),
+    .I1(GND),
+    .I3(VCC),
+    .CIN(n9_2) 
+);
+defparam n8_s.ALU_MODE=0;
+  ALU n7_s (
+    .SUM(n7_1),
+    .COUT(n7_2),
+    .I0(counter[6]),
+    .I1(GND),
+    .I3(VCC),
+    .CIN(n8_2) 
+);
+defparam n7_s.ALU_MODE=0;
+  ALU n6_s (
+    .SUM(n6_1),
+    .COUT(n6_0_COUT),
+    .I0(counter[7]),
+    .I1(GND),
+    .I3(VCC),
+    .CIN(n7_2) 
+);
+defparam n6_s.ALU_MODE=0;
+  INV n15_s19 (
+    .O(n15_26),
+    .I(counter[7]) 
+);
+  INV n13_s2 (
+    .O(n13_6),
+    .I(counter[0]) 
+);
+  VCC VCC_cZ (
+    .V(VCC)
+);
+  GND GND_cZ (
+    .G(GND)
+);
+  GSR GSR (
+    .GSRI(VCC) 
+);
+endmodule /* pwm */

@@ -1,0 +1,20 @@
+[
+    {
+        "InstFile": "C:/Gowin/Gowin_V1.9.12.03_x64/IDE/bin/Documents/pll_ffrequency_day2/src/pll_frequency_day2.v",
+        "InstLine": 1,
+        "InstName": "pll_frequency_day2",
+        "ModuleFile": "C:/Gowin/Gowin_V1.9.12.03_x64/IDE/bin/Documents/pll_ffrequency_day2/src/pll_frequency_day2.v",
+        "ModuleLine": 1,
+        "ModuleName": "pll_frequency_day2",
+        "SubInsts": [
+            {
+                "InstFile": "C:/Gowin/Gowin_V1.9.12.03_x64/IDE/bin/Documents/pll_ffrequency_day2/src/pll_frequency_day2.v",
+                "InstLine": 9,
+                "InstName": "u_pll",
+                "ModuleFile": "C:/Gowin/Gowin_V1.9.12.03_x64/IDE/bin/Documents/pll_ffrequency_day2/src/gowin_pllvr/gowin_pllvr.v",
+                "ModuleLine": 10,
+                "ModuleName": "Gowin_PLLVR"
+            }
+        ]
+    }
+]

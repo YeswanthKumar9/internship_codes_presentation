@@ -1,0 +1,109 @@
+//
+//Written by GowinSynthesis
+//Tool Version "V1.9.12.03 (64-bit)"
+//Sat Sep  5 16:40:23 2026
+
+//Source file index table:
+//file0 "\C:/Gowin/Gowin_V1.9.12.03_x64/IDE/bin/Documents/led_day1/Documents/day_4_counter/src/counter.v"
+`timescale 100 ps/100 ps
+module counter (
+  clk,
+  rst,
+  count
+)
+;
+input clk;
+input rst;
+output [3:0] count;
+wire clk_d;
+wire rst_d;
+wire n8_4;
+wire n7_4;
+wire n6_4;
+wire n9_7;
+wire [3:0] count_d;
+wire VCC;
+wire GND;
+  IBUF clk_ibuf (
+    .O(clk_d),
+    .I(clk) 
+);
+  IBUF rst_ibuf (
+    .O(rst_d),
+    .I(rst) 
+);
+  OBUF count_0_obuf (
+    .O(count[0]),
+    .I(count_d[0]) 
+);
+  OBUF count_1_obuf (
+    .O(count[1]),
+    .I(count_d[1]) 
+);
+  OBUF count_2_obuf (
+    .O(count[2]),
+    .I(count_d[2]) 
+);
+  OBUF count_3_obuf (
+    .O(count[3]),
+    .I(count_d[3]) 
+);
+  LUT2 n8_s0 (
+    .F(n8_4),
+    .I0(count_d[0]),
+    .I1(count_d[1]) 
+);
+defparam n8_s0.INIT=4'h6;
+  LUT3 n7_s0 (
+    .F(n7_4),
+    .I0(count_d[0]),
+    .I1(count_d[1]),
+    .I2(count_d[2]) 
+);
+defparam n7_s0.INIT=8'h78;
+  LUT4 n6_s0 (
+    .F(n6_4),
+    .I0(count_d[0]),
+    .I1(count_d[1]),
+    .I2(count_d[2]),
+    .I3(count_d[3]) 
+);
+defparam n6_s0.INIT=16'h7F80;
+  DFFC count_2_s1 (
+    .Q(count_d[2]),
+    .D(n7_4),
+    .CLK(clk_d),
+    .CLEAR(rst_d) 
+);
+  DFFC count_1_s1 (
+    .Q(count_d[1]),
+    .D(n8_4),
+    .CLK(clk_d),
+    .CLEAR(rst_d) 
+);
+  DFFC count_0_s1 (
+    .Q(count_d[0]),
+    .D(n9_7),
+    .CLK(clk_d),
+    .CLEAR(rst_d) 
+);
+  DFFC count_3_s2 (
+    .Q(count_d[3]),
+    .D(n6_4),
+    .CLK(clk_d),
+    .CLEAR(rst_d) 
+);
+  INV n9_s2 (
+    .O(n9_7),
+    .I(count_d[0]) 
+);
+  VCC VCC_cZ (
+    .V(VCC)
+);
+  GND GND_cZ (
+    .G(GND)
+);
+  GSR GSR (
+    .GSRI(VCC) 
+);
+endmodule /* counter */

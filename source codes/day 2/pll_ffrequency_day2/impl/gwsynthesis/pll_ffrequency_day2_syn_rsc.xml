@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module name="pll_frequency_day2" Register="29" Alu="27" Lut="11" T_Register="29(29)" T_Alu="27(27)" T_Lut="11(11)">
+ <SubModule name="u_pll"/>
+</Module>

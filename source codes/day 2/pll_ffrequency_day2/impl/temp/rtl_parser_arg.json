@@ -1,0 +1,20 @@
+{
+    "Device": "GW1NSR-4C",
+    "Files": [
+        {
+            "Path": "C:/Gowin/Gowin_V1.9.12.03_x64/IDE/bin/Documents/pll_ffrequency_day2/src/gowin_pllvr/gowin_pllvr.v",
+            "Type": "verilog"
+        },
+        {
+            "Path": "C:/Gowin/Gowin_V1.9.12.03_x64/IDE/bin/Documents/pll_ffrequency_day2/src/pll_frequency_day2.v",
+            "Type": "verilog"
+        }
+    ],
+    "IncludePath": [
+    ],
+    "LoopLimit": 2000,
+    "ResultFile": "C:/Gowin/Gowin_V1.9.12.03_x64/IDE/bin/Documents/pll_ffrequency_day2/impl/temp/rtl_parser.result",
+    "Top": "pll_frequency_day2",
+    "VerilogStd": "verilog_2001",
+    "VhdlStd": "vhdl_93"
+}
